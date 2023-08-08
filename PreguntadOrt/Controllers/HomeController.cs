@@ -6,26 +6,32 @@ namespace PreguntadOrt.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-
+    
     public IActionResult Index()
     {
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult ConfigurarJuego()
+    {
+        return View();
+
+    }
+
+    public IActionResult Comenzar(string username, int dificultad, int categoria)
     {
         return View();
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public IActionResult Jugar()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return View();
     }
+
+    [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
+    {
+        return View();
+    }
+
+    
 }
