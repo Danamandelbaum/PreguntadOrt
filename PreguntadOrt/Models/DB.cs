@@ -40,8 +40,10 @@ public static class BD
     {
         using (SqlConnection DB = new SqlConnection(_connectionString))
         {
-            string SQL = "SELECT * FROM Categorias WHERE Dificultad = @dificultad and Categoria = @categoria"
-            listarRtas =  DB.Query<Respuestas>(SQL, new {dificultad = Dificultad}).ToList();
+            foreach(string rta in listarPreguntas)
+            {
+                rta.AddRange(listarRtas)
+            }
         }
     } 
 }
