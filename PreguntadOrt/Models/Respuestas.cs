@@ -1,4 +1,5 @@
 namespace PreguntadOrt.Models;
+
 public class Respuestas
 {
     public int IdRespuesta {get;private set;}

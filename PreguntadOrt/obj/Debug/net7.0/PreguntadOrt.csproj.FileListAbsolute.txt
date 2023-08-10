@@ -1,0 +1,8 @@
+Z:\PROGRAMACION2023\PreguntadOrt\PreguntadOrt\obj\Debug\net7.0\PreguntadOrt.csproj.AssemblyReference.cache
+Z:\PROGRAMACION2023\PreguntadOrt\PreguntadOrt\obj\Debug\net7.0\PreguntadOrt.GeneratedMSBuildEditorConfig.editorconfig
+Z:\PROGRAMACION2023\PreguntadOrt\PreguntadOrt\obj\Debug\net7.0\PreguntadOrt.AssemblyInfoInputs.cache
+Z:\PROGRAMACION2023\PreguntadOrt\PreguntadOrt\obj\Debug\net7.0\PreguntadOrt.AssemblyInfo.cs
+Z:\PROGRAMACION2023\PreguntadOrt\PreguntadOrt\obj\Debug\net7.0\PreguntadOrt.csproj.CoreCompileInputs.cache
+Z:\PROGRAMACION2023\PreguntadOrt\PreguntadOrt\obj\Debug\net7.0\PreguntadOrt.MvcApplicationPartsAssemblyInfo.cache
+Z:\PROGRAMACION2023\PreguntadOrt\PreguntadOrt\obj\Debug\net7.0\PreguntadOrt.RazorAssemblyInfo.cache
+Z:\PROGRAMACION2023\PreguntadOrt\PreguntadOrt\obj\Debug\net7.0\PreguntadOrt.RazorAssemblyInfo.cs
