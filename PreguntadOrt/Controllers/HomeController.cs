@@ -15,24 +15,45 @@ public class HomeController : Controller
     public IActionResult ConfigurarJuego()
     {
         Juego.InicializarJuego();
-        ViewBag.dificultad = Dificultades;
-        ViewBag.categoria = Categorias; 
+        ViewBag.dificultad = DB.ObtenerDificultades();
+        ViewBag.categoria = DB.ObtenerCategorias(); 
         return View();
 
     }
 
     public IActionResult Comenzar(string username, int dificultad, int categoria)
     {
+        Juego.CargarPartida();
+        if (Juego.ObtenerProximaPregunta())
+        {
+            return RedirectToAction("Jugar");
+        }
+        else
+        {
+            return RedirectToAction("ConfigurarJuego");
+        }
         return View();
     }
 
     public IActionResult Jugar()
     {
+        ViewBag.PreguntaAResponder = Juego.ObtenerProximaPregunta();
+        if (ViewBag.PreguntaAResponder == null)
+        {
+            return View ("Fin");
+        }
+        else
+        {
+            viewBag.Respuestas = Juego.ObtenerProximaRespuesta();
+            return View ("Juego");
+        }
         return View();
     }
 
     [HttpPost] public IActionResult VerificarRespuesta(int idPregunta, int idRespuesta)
     {
+        bool rtaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
+        viewBag.rtaCorrecta = respuestaCorrecta;
         return View();
     }
 

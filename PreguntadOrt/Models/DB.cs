@@ -5,8 +5,8 @@ public static class BD
 {
     private static string _connectionString = @"Server = localhost; Database=PreguntOrt; Trusted_Connection = True;";
 
-    public static list <int> listarCategorias = new list <int>();
-    private static void ObtenerCategorias()
+    public static list <Categorias> listarCategorias = new list <Categorias>();
+    public static list <Categorias> ObtenerCategorias()
     {
         using (SqlConnection DB = new SqlConnection(_connectionString))
         {
@@ -15,8 +15,8 @@ public static class BD
         }
     } 
 
-    public static list <int> listarDificultades = new list<int>();
-    private static void ObtenerDificultades()
+    public static list <Dificultades> listarDificultades = new list<Dificultades>();
+    public static list <Dificultades> ObtenerDificultades()
     {
         using (SqlConnection DB = new SqlConnection(_connectionString))
         {
@@ -26,7 +26,7 @@ public static class BD
     } 
 
     public static list <Pregunta> listarPreguntas = new list<Pregunta>();
-    private static void  ObtenerPreguntas(int dificultad, int categoria)
+    public static list <Pregunta>  ObtenerPreguntas(int dificultad, int categoria)
     {
         using (SqlConnection DB = new SqlConnection(_connectionString))
         {
@@ -36,8 +36,15 @@ public static class BD
     } 
 
     public static list <Respuestas> listarRtas = new list <Respuestas>();
-    private static void ObtenerRtas (list <Pregunta> preguntas)
+    public static list <Respuestas> ObtenerRtas (list <Pregunta> listarPreguntas)
     {
-        
+        foreach (Pregunta pregunta in listarPreguntas)
+        {
+            using (SqlConnection DB = new SqlConnection(_connectionString))
+            {
+                string SQL = "SELECT * FROM Respuestas WHERE Enunciado = @pregunta";
+                listarPreguntas =  DB.Query<Respuestas>(SQL, new {pregunta = Enunciado}).ToList();
+            }
+        }
     } 
 }
