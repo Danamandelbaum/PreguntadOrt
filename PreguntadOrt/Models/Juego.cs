@@ -35,12 +35,23 @@ public static class Juego
 
     public static Pregunta ObtenerProximaPregunta()
     {
-       
+       if (_preguntas.Count == 0)
+        {
+            return null;
+        }
+
+        Random random = new Random();
+        int index = random.Next(_preguntas.Count);
+        PreguntaActual = _preguntas[index];
+        _preguntas.RemoveAt(index);
+
+        NumeroPregunta++;
+        return PreguntaActual;
     }
 
     public static list <Respuestas> ObtenerProximaRespuesta()
     {
-       
+       _preguntas.Remove(PreguntaActual);
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta)
