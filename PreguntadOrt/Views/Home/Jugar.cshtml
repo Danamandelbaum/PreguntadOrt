@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Jugar";
+}
+
+<h1>Jugar</h1>
+<p>Usuario: @Juego.Username</p>
+<p>Puntaje: @Juego.PuntajeActual</p>
+<p>Pregunta actual: @Juego.NumeroPregunta</p>
+<p>Enunciado: @Juego.PreguntaActual.Enunciado</p>
+
+<form asp-action="VerificarRespuesta" method="post">
+    @ViewBag.Respuestas
+    <button type="submit" class="btn btn-primary">Responder</button>
+</form>
