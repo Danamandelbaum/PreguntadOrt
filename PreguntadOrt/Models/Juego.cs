@@ -3,24 +3,24 @@ public static class Juego
     private static string _username{get;  set;}
     private static int _puntajeActual{get;  set;}
     private static int _cantidadPreguntasCorrectas{get;  set;}
-    private static list <Pregunta> _preguntas{get;  set;}
-    private static list <Respuestas> _respuestas{get;  set;}
+    private static List<Pregunta> _preguntas{get;  set;}
+    private static List<Respuestas> _respuestas{get;  set;}
 
     private static void InicializarJuego()
     {
         _username = "";
         _puntajeActual = 0;
         _cantidadPreguntasCorrectas = 0;
-        _preguntas = new list <Pregunta>();
-        _respuestas = new list <Respuestas>();
+        _preguntas = new List<Pregunta>();
+        _respuestas = new List<Respuestas>();
     }
 
-    public static list <Categorias> ObtenerCategorias()
+    public static List <Categorias> ObtenerCategorias()
     {
         return DB.ObtenerCategorias();
     }
 
-    public static list <Dificultades> ObtenerDificultades()
+    public static List <Dificultades> ObtenerDificultades()
     {
         return DB.ObtenerDificultades();
     }
@@ -41,15 +41,15 @@ public static class Juego
         }
 
         Random random = new Random();
-        int index = random.Next(_preguntas.Count);
-        PreguntaActual = _preguntas[index];
-        _preguntas.RemoveAt(index);
+        int num = random.Next(_preguntas.Count);
+        PreguntaActual = _preguntas[num];
+        _preguntas.RemoveAt(num);
 
         NumeroPregunta++;
         return PreguntaActual;
     }
 
-    public static list <Respuestas> ObtenerProximaRespuesta()
+    public static List<Respuestas> ObtenerProximaRespuesta()
     {
        _preguntas.Remove(PreguntaActual);
     }

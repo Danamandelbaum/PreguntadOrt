@@ -2,9 +2,9 @@ namespace PreguntadOrt.Models;
 
 public class Respuestas
 {
-    public int IdRespuesta {get;private set;}
-    public int IdPregunta {get;private set;}
-    public int Opcion {get;private set;}
-    public string Contenido {get;private set;}
-    public bool Correcta {get;private set;}
+    public int IdRespuesta {get; set;}
+    public int IdPregunta {get; set;}
+    public int Opcion {get; set;}
+    public string Contenido {get; set;}
+    public bool Correcta {get; set;}
 }

@@ -16,12 +16,32 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = Z:\PROGRAMACION2023\PreguntadOrt\PreguntadOrt
 build_property._RazorSourceGeneratorDebug = 
 
+[Z:/PROGRAMACION2023/PreguntadOrt/PreguntadOrt/Views/Home/ConfigurarJuego.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maWd1cmFySnVlZ28uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/PROGRAMACION2023/PreguntadOrt/PreguntadOrt/Views/Home/Fin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [Z:/PROGRAMACION2023/PreguntadOrt/PreguntadOrt/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[Z:/PROGRAMACION2023/PreguntadOrt/PreguntadOrt/Views/Home/Juego.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxKdWVnby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [Z:/PROGRAMACION2023/PreguntadOrt/PreguntadOrt/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/PROGRAMACION2023/PreguntadOrt/PreguntadOrt/Views/Home/Respuesta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXNwdWVzdGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[Z:/PROGRAMACION2023/PreguntadOrt/PreguntadOrt/Views/Home/_ Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfIExheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [Z:/PROGRAMACION2023/PreguntadOrt/PreguntadOrt/Views/Shared/Error.cshtml]

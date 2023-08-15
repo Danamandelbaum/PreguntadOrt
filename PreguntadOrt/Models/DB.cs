@@ -5,8 +5,8 @@ public static class BD
 {
     private static string _connectionString = @"Server = localhost; Database=PreguntOrt; Trusted_Connection = True;";
 
-    public static list <Categorias> listarCategorias = new list <Categorias>();
-    public static list <Categorias> ObtenerCategorias()
+    private static List<Categorias> listarCategorias = new list <Categorias>();
+    public static List<Categorias> ObtenerCategorias()
     {
         using (SqlConnection DB = new SqlConnection(_connectionString))
         {
@@ -15,8 +15,8 @@ public static class BD
         }
     } 
 
-    public static list <Dificultades> listarDificultades = new list<Dificultades>();
-    public static list <Dificultades> ObtenerDificultades()
+    private static List<Dificultades> listarDificultades = new list<Dificultades>();
+    public static List<Dificultades> ObtenerDificultades()
     {
         using (SqlConnection DB = new SqlConnection(_connectionString))
         {
@@ -25,25 +25,34 @@ public static class BD
         }
     } 
 
-    public static list <Pregunta> listarPreguntas = new list<Pregunta>();
-    public static list <Pregunta>  ObtenerPreguntas(int dificultad, int categoria)
+    private static List<Pregunta> listarPreguntas = new list<Pregunta>();
+    public static List<Pregunta>  ObtenerPreguntas(int dificultad, int categoria)
     {
         using (SqlConnection DB = new SqlConnection(_connectionString))
         {
-            string SQL = "SELECT * FROM Categorias WHERE Dificultad = @dificultad and Categoria = @categoria";
-            listarPreguntas =  DB.Query<Pregunta>(SQL, new {dificultad = Dificultad}, new {categoria = Categoria}).ToList();
+            string SQL = "SELECT * FROM Pregunta  WHERE IdCategoria = @categoria and IdDificultad = @dificultad";
+            if (dificultad = -1)
+            {
+                SQL = "SELECT * FROM Pregunta  WHERE IdCategoria = @categoria";
+            }
+            else if (categoria = -1)
+            {
+                SQL = "SELECT * FROM Pregunta  WHERE IdDificultad = @dificultad";
+            }
+            
+            listarPreguntas =  DB.Query<Pregunta>(SQL, new {dificultad = IdDificultad, categoria = IdCategoria}).ToList();
         }
     } 
 
-    public static list <Respuestas> listarRtas = new list <Respuestas>();
-    public static list <Respuestas> ObtenerRtas (list <Pregunta> listarPreguntas)
+    private static List<Respuestas> listarRtas = new List<Respuestas>();
+    public static List<Respuestas> ObtenerRtas (List<Pregunta> listarPreguntas)
     {
         foreach (Pregunta pregunta in listarPreguntas)
         {
             using (SqlConnection DB = new SqlConnection(_connectionString))
             {
                 string SQL = "SELECT * FROM Respuestas WHERE Enunciado = @pregunta";
-                listarPreguntas =  DB.Query<Respuestas>(SQL, new {pregunta = Enunciado}).ToList();
+                listarRtas =  DB.Query<Respuestas>(SQL, new {pregunta = Enunciado}).ToList();
             }
         }
     } 
