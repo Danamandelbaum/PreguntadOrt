@@ -1,3 +1,4 @@
+namespace PreguntadOrt.Models;
 public static class Juego
 {
     private static string _username{get;  set;}
@@ -5,8 +6,9 @@ public static class Juego
     private static int _cantidadPreguntasCorrectas{get;  set;}
     private static List<Pregunta> _preguntas{get;  set;}
     private static List<Respuestas> _respuestas{get;  set;}
+    public static int NumeroPregunta{get; set;}
 
-    private static void InicializarJuego()
+    public static void InicializarJuego()
     {
         _username = "";
         _puntajeActual = 0;
@@ -15,22 +17,22 @@ public static class Juego
         _respuestas = new List<Respuestas>();
     }
 
-    public static List <Categorias> ObtenerCategorias()
+    public static List<Categorias> ObtenerCategorias()
     {
-        return DB.ObtenerCategorias();
+        return BD.ObtenerCategorias();
     }
 
-    public static List <Dificultades> ObtenerDificultades()
+    public static List<Dificultades> ObtenerDificultades()
     {
-        return DB.ObtenerDificultades();
+        return BD.ObtenerDificultades();
     }
 
 
-    private static void CargarPartida(string username, int dificultad, int categoria)
+    public static void CargarPartida(string username, int dificultad, int categoria)
     {
-        username = username;
-        _preguntas = DB.ObtenerPreguntas(dificultad, categoria);
-        _respuestas = DB.ObtenerRtas(_preguntas);
+        _username = username;
+        _preguntas = BD.ObtenerPreguntas(dificultad, categoria);
+        _respuestas = BD.ObtenerRtas(_preguntas);
     }
 
     public static Pregunta ObtenerProximaPregunta()
@@ -42,16 +44,23 @@ public static class Juego
 
         Random random = new Random();
         int num = random.Next(_preguntas.Count);
-        PreguntaActual = _preguntas[num];
-        _preguntas.RemoveAt(num);
-
+        Pregunta PreguntaActual = _preguntas[num];
+        _preguntas.Remove(PreguntaActual);
         NumeroPregunta++;
         return PreguntaActual;
     }
 
-    public static List<Respuestas> ObtenerProximaRespuesta()
+    private static List<Respuestas> ListarProximasRespuestas = new List<Respuestas>();
+    public static List<Respuestas> ObtenerProximaRespuesta(int IdPregunta)
     {
-       _preguntas.Remove(PreguntaActual);
+       for (int i = 0; i < _respuestas.Count; i++)
+        {
+           if (_respuestas[i].IdPregunta == IdPregunta) 
+           {
+                ListarProximasRespuestas.Add(_respuestas[i]);
+           }
+        }
+        return ListarProximasRespuestas;
     }
 
     public static bool VerificarRespuesta(int idPregunta, int idRespuesta)
@@ -61,7 +70,6 @@ public static class Juego
         {
             _puntajeActual = _puntajeActual + 5;
             _cantidadPreguntasCorrectas++;
-            listarPreguntas.RemoveAt(idPregunta);
             return respuestaCorrecta = true;
         }
         else
@@ -71,3 +79,14 @@ public static class Juego
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
