@@ -1,10 +1,36 @@
 @{
     ViewData["Title"] = "ConfigurarJuego";
 }
-<select class="form-select" size="3" aria-label="Size 3 select example">
-  <option selected>Categorias</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="-1">-1</option>
-</select>
+<div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Elegir Dificultad
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" type="button">Facil</button></li>
+          <li><button class="dropdown-item" type="button">Intermedio</button></li>
+          <li><button class="dropdown-item" type="button">Dificil</button></li>
+          <li><button class="dropdown-item" type="button">Todas las opciones </button></li>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Elegir Categoria
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" type="button">Entretenimiento</button></li>
+          <li><button class="dropdown-item" type="button">Deportes</button></li>
+          <li><button class="dropdown-item" type="button">Arte</button></li>
+          <li><button class="dropdown-item" type="button">Ciencia</button></li>
+          <li><button class="dropdown-item" type="button">Todas las opciones</button></li>
+        </ul>
+      </div>
+
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Elegi tu nombre de usuario</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+
+        <a class="btn btn-primary" href="Juego.html" role="button">EMPEZAR JUEGO</a>
+      </form>

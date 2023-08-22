@@ -18,7 +18,7 @@ public class HomeController : Controller
         Juego.InicializarJuego();
         ViewBag.dificultad = BD.ObtenerDificultades();
         ViewBag.categoria = BD.ObtenerCategorias(); 
-        return View();
+        return View("ConfigurarJuego");
 
     }
 
@@ -33,7 +33,7 @@ public class HomeController : Controller
         {
             return RedirectToAction("ConfigurarJuego");
         }
-        return View();
+        return View("Comenzar");
     }
 
     public IActionResult Jugar()
@@ -55,7 +55,7 @@ public class HomeController : Controller
     {
         bool rtaCorrecta = Juego.VerificarRespuesta(idPregunta, idRespuesta);
         ViewBag.rtaCorrecta = rtaCorrecta;
-        return View();
+        return View("VerificarRespuesta");
     }
 
     

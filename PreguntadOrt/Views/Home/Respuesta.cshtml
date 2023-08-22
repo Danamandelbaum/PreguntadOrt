@@ -1,3 +1,14 @@
 @{
     ViewData["Title"] = "Respuesta";
 }
+@if (@ViewBag.VerificarRespuesta.rtaCorrecta)
+{
+    <h1>CORRECTO</h1>
+    <img src = "Imagenes/Ganaste.PNG" >
+}
+else
+{
+    <h1>INCORRECTO</h1>
+    <img src = "Imagenes/Perdiste.JPG" >
+}
+<a class="btn btn-primary btn-lg" href="HomeControllers/Jugar" role="button">PROXIMA PREGUNTA</a>

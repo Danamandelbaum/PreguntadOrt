@@ -5,8 +5,40 @@
       "PackagePath": "staticwebassets\\PreguntadOrt.bundle.scp.css"
     },
     {
+      "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\Imagenes\\Ciencia.png",
+      "PackagePath": "staticwebassets\\Imagenes\\Ciencia.png"
+    },
+    {
+      "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\Imagenes\\Ganaste.PNG",
+      "PackagePath": "staticwebassets\\Imagenes\\Ganaste.PNG"
+    },
+    {
+      "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\Imagenes\\Perdiste.JPG",
+      "PackagePath": "staticwebassets\\Imagenes\\Perdiste.JPG"
+    },
+    {
       "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\Imagenes\\PreguntadosLogo.webp",
       "PackagePath": "staticwebassets\\Imagenes\\PreguntadosLogo.webp"
+    },
+    {
+      "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\Imagenes\\Thumbs.db",
+      "PackagePath": "staticwebassets\\Imagenes\\Thumbs.db"
+    },
+    {
+      "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\Imagenes\\arte.png",
+      "PackagePath": "staticwebassets\\Imagenes\\arte.png"
+    },
+    {
+      "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\Imagenes\\deportes.png",
+      "PackagePath": "staticwebassets\\Imagenes\\deportes.png"
+    },
+    {
+      "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\Imagenes\\ent.jpg",
+      "PackagePath": "staticwebassets\\Imagenes\\ent.jpg"
+    },
+    {
+      "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\Imagenes\\logopreguntados.png",
+      "PackagePath": "staticwebassets\\Imagenes\\logopreguntados.png"
     },
     {
       "Id": "Z:\\PROGRAMACION2023\\PreguntadOrt\\PreguntadOrt\\wwwroot\\css\\site.css",
