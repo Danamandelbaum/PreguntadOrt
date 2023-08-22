@@ -11,3 +11,32 @@
         <li><a class="btn btn-primary btn-lg" href="Respuesta.html" role="button">@ViewBag.Respuesta</a></li>
         </ul>
       </div>
+
+
+
+
+<div class="jumbotron">
+    <h4>Username: @Model.Item1</h4>
+    <h4>Puntaje Actual: @Model.Item2</h4>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Pregunta @ViewBag.Pregunta.Enunciado:</h5>
+    </div>
+    <div class="card-body">
+        <p>@ViewBag.Pregunta.IdRespuesta</p>
+    </div>
+</div>
+
+<form asp-action="VerificarRespuesta" method="post" class="mt-4">
+    <div class="list-group">
+        @foreach (Respuestas respuesta in ViewBag.listarRespuestas)
+        {
+            <label class="list-group-item">
+                @ViewBag.Respuestas.Contenido
+            </label>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Responder</button>
+</form>

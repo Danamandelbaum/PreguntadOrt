@@ -1,36 +1,26 @@
 @{
     ViewData["Title"] = "ConfigurarJuego";
 }
-<div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Elegir Dificultad
-        </button>
-        <ul class="dropdown-menu">
-          <li><button class="dropdown-item" type="button">Facil</button></li>
-          <li><button class="dropdown-item" type="button">Intermedio</button></li>
-          <li><button class="dropdown-item" type="button">Dificil</button></li>
-          <li><button class="dropdown-item" type="button">Todas las opciones </button></li>
-        </ul>
-      </div>
+      <form asp-action="Comenzar" method="post">
 
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Elegir Categoria
-        </button>
-        <ul class="dropdown-menu">
-          <li><button class="dropdown-item" type="button">Entretenimiento</button></li>
-          <li><button class="dropdown-item" type="button">Deportes</button></li>
-          <li><button class="dropdown-item" type="button">Arte</button></li>
-          <li><button class="dropdown-item" type="button">Ciencia</button></li>
-          <li><button class="dropdown-item" type="button">Todas las opciones</button></li>
-        </ul>
-      </div>
+      @foreach (Dificultades Dif in ViewBag.listarDificultades)
+      {
+        <button type="button" id="@Dif.IdDificultad" class = "btn btn-primary" 
+        onclick="elegirDificultad(@Dif.IdDificultad, @ViewBag.listarDificultades)">@Dif.Nombre</button>
+      
+      }
 
-      <form>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Elegi tu nombre de usuario</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
+        @foreach (Categorias Cat in ViewBag.listarCategorias)
+      {
+        <button type="button" id="@Cat.IdCategoria" class = "btn btn-primary" 
+        onclick="elegirCategoria(@Cat.IdCategoria, @ViewBag.listarCategorias)">@Cat.Nombre</button>
+      
+      }
 
-        <a class="btn btn-primary" href="Juego.html" role="button">EMPEZAR JUEGO</a>
-      </form>
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <button type="submit">Jugar</button>
+</form>
+  

@@ -45,7 +45,7 @@ public static class Juego
         Random random = new Random();
         int num = random.Next(_preguntas.Count);
         Pregunta PreguntaActual = _preguntas[num];
-        _preguntas.Remove(PreguntaActual);
+        _preguntas.RemoveAt(num);
         NumeroPregunta++;
         return PreguntaActual;
     }
